@@ -43,9 +43,9 @@ def analyse_ekf(
 
     try:
         in_air = InAirDetector(
-            ulog, min_flight_time_seconds=min_flight_duration_seconds, in_air_margin_seconds=0.0)
+            ulog, min_flight_time_seconds=0, in_air_margin_seconds=0.0)
         in_air_no_ground_effects = InAirDetector(
-            ulog, min_flight_time_seconds=min_flight_duration_seconds,
+            ulog, min_flight_time_seconds=0,
             in_air_margin_seconds=in_air_margin_seconds)
     except Exception as e:
         raise PreconditionError(str(e))
